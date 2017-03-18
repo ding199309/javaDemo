@@ -13,15 +13,13 @@ public class test {
 		map.put(key, "tom");
 		map.put(key, "haha");
 		System.out.println(map.get(key));
-		
-		
+				
 		byte[] key1="1".getBytes();
 		Map<byte[],String>  map2=new HashMap<byte[],String>();
 		map2.put(key1, "jim");
 		map2.put(key1, "tom");
 		map2.put(key1, "haha");
 		System.out.println(map2.get(key1));
-		System.out.println(map2.get(null));
-		
+		System.out.println(map2.get(null));	
 	}
 }
