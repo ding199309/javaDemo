@@ -36,12 +36,12 @@ public class MyHashMap<K,V>  implements MyMap<K, V>{
 		int index=indexFor(key);
 		Entry<K,V> element=table[index];
 		if(null==element){
-			table[index]=new Node(key,value,null,index);
+			table[index]=new Node<K, V>(key,value,null,index);
 			//map的长度要加1
 			size++;
 		}else{
 			//重复存值
-			Entry<K,V> curr=new Node(key,value,element,index);
+			Entry<K,V> curr=new Node<K, V>(key,value,element,index);
 			table[index]=curr;
 		}
 		return table[index].getValue();
