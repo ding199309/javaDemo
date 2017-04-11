@@ -1,4 +1,4 @@
-package com.demo.ali;
+package com.demo.ali.app;
 
 import com.alipay.api.AlipayClient;
 import com.alipay.api.AlipayConstants;

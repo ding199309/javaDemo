@@ -13,7 +13,6 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.domain.AlipayTradeAppPayModel;
 import com.alipay.api.request.AlipayTradeAppPayRequest;
 import com.alipay.api.response.AlipayTradeAppPayResponse;
-import com.demo.ali.AlipayUtil;
 
 /** 
  * ClassName:PaySend <br/> 
