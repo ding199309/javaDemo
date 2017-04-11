@@ -7,7 +7,7 @@
  * 
 */  
   
-package com.demo.ali;
+package com.demo.ali.app;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.alipay.api.internal.util.AlipaySignature;
 
 /** 
  * ClassName:Pay <br/> 
- * Function: TODO ADD FUNCTION. <br/> 
+ * Function: app验签. <br/> 
  * Date:     2017年3月27日 下午6:57:19 <br/> 
  * @author   dfz
  * @version   
