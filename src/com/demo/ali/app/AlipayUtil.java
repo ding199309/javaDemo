@@ -20,7 +20,7 @@ public class AlipayUtil {
 				if (null == alipayClient) {
 					alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do", appid,
 							private_key, AlipayConstants.FORMAT_JSON, AlipayConstants.CHARSET_UTF8,
-							public_key,"RSA2");
+							public_key,AlipayConstants.SIGN_TYPE_RSA2);
 				}
 			}
 		}
