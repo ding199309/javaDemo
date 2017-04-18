@@ -53,6 +53,7 @@ public class TestEnumDemoThree {
      * 演示枚举类型的遍历
      */
     public static void  list(){
+    	System.out.println(Light.GREEN.toString().equals("绿色"));
     	for (Light light:Light.values()) {
 			System.out.println("当前灯的ordinal::"+light.ordinal()+"|"+"当前灯的name::"+light.name()+"|"+"当前灯::"+light);
 		}
