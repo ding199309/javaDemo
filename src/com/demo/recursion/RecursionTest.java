@@ -21,6 +21,7 @@ public class RecursionTest {
             //取得每一个字符
             List<Integer> list=new ArrayList<Integer>();
             list.add(i);
+            System.out.println("i================"+i);
             play(list);
         }
 	}	
@@ -33,15 +34,27 @@ public class RecursionTest {
             if(!list.contains(i)){
                 List<Integer> temp=new ArrayList<Integer>(list);
                 temp.add(i);
+                for(Integer t:temp){
+                	System.out.print("===t="+t);
+                }    
+                System.out.println();
                 play(temp);
             }
         }
     }
     //打印列表内容
     private static void print(List<Integer> list){
-        for(Integer i:list)
-            System.out.print(chars[i]+"");
-        System.out.println();
+        for(Integer i:list){
+  //          System.out.print(chars[i]+"");
+   //     System.out.println();
+        }
     }
 	
+    
+    
+    
+    
+    
+    
+    
 }

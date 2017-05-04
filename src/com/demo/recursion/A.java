@@ -8,7 +8,7 @@ import java.util.List;
 * @author   dfz
 * 作者 E-mail:  dfz@jkinvest.cn
 * @date 创建时间：2017年4月20日 上午10:26:20 
-* @version 1.0         重写comparTo的方法
+* @version 1.0         
 * @parameter  
 * @since  
 * @return  
