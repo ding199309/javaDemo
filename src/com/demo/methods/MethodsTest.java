@@ -5,8 +5,8 @@ import java.util.concurrent.ConcurrentMap;
 
 /** 
 * @author   dfz
-* ×÷Õß E-mail:  dfz@jkinvest.cn
-* @date ´´½¨Ê±¼ä£º2017Äê4ÔÂ20ÈÕ ÉÏÎç10:27:02 
+* ï¿½ï¿½ï¿½ï¿½ E-mail:  dfz@jkinvest.cn
+* @date ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2017ï¿½ï¿½4ï¿½ï¿½20ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½10:27:02 
 * @version 1.0 
 * @parameter  
 * @since  
@@ -22,7 +22,7 @@ public class MethodsTest {
 	
 	public static  void test(String ...time){
 		for (int i = 0; i < time.length; i++) {
-			System.out.print(time[i]+" ");
+//			System.out.print(time[i]+" ");
 		}
 	}
 	public static  void test1(int ...time){
