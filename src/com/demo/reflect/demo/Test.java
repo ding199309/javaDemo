@@ -15,11 +15,19 @@ public class Test {
     public static void main(String[] args) {
         RealSubject realSub = new RealSubject();
         InvocationHandler handler = new DynamicSubject(realSub);
-        Class<?> classType = handler.getClass();
-        Subject sub = (Subject) Proxy.newProxyInstance(classType.getClassLoader(),
-                realSub.getClass().getInterfaces(), handler);
+
+        Class c = handler.getClass();
+
+        Subject sub = (Subject)
+                Proxy.newProxyInstance(
+                    c.getClassLoader(),
+                    realSub.getClass().getInterfaces(),
+                    handler);
+
         System.out.println("------------");
-        System.out.println(sub.getClass());
+
+        System.out.println("sub.getClass()=="+sub.getClass());
+
         sub.Request();
     }
 
