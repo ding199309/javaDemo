@@ -12,6 +12,7 @@
 * 8. recursion   		递归
 * 9. redis		 		练习Jedis和JedisPool
 * 10. stringtokenizer   字符串的剪切类似spilt	  
-* 11. reflect           学习反射
+* 11. reflect           反射
+* 12. thread            线程    线程池TestThreadPool
 
 
