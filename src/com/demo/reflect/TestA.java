@@ -25,13 +25,15 @@ public class TestA {
         //第一种方式：
         Class  t1=Class.forName("com.demo.reflect.Demo");
         System.out.println(t1);
+
         //第二种方式：
         //java中每个类型都有class 属性.
-        Class t2= com.demo.reflect.Demo.class;
+        Class t2=Demo.class;
         System.out.println(t2);
+
         //第三种方式：
         //java语言中任何一个java对象都有getClass 方法
-        com.demo.reflect.Demo demo2=new com.demo.reflect.Demo();
+        Demo demo2=new Demo();
         Class t3=demo2.getClass();
     }
 
@@ -48,9 +50,10 @@ public class TestA {
 
     }
 
-    //3,获取类的方法
+    //3,方法
     @Test
     public   void demo3() throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
+
         System.out.println("获取public修饰的方法");
         Method[] me=t3.getMethods();
         for (Method method : me) {
@@ -63,26 +66,26 @@ public class TestA {
         for(Method method : methods){
             System.out.println(method.getName());
         }
-        com.demo.reflect.Demo demo= (com.demo.reflect.Demo) t3.newInstance();
+        Demo demo= (Demo) t3.newInstance();
         Method method=t3.getDeclaredMethod("add",int.class,int.class);
         method.setAccessible(true);
         int ssm= (int) method.invoke(demo,1,2);
         System.out.println("ssm=private修饰符==通过注入获取返回结果======1==="+ssm);
-
         com.demo.reflect.Demo demo1= (com.demo.reflect.Demo) t3.newInstance();
         Method method1=t3.getMethod("add2",int.class,int.class);
         int ssm1= (int) method.invoke(demo,1,11);
         System.out.println("ssm1=public修饰符==通过注入获取返回结果======2==="+ssm1);
     }
+
     @Test
-    //4,获取类的属性
+    //4,属性
     public  void demo4() throws Exception{
-        System.out.println("获取public修饰的属性==========");
+        System.out.println("获取public修饰的属性:");
         Field[] fields=t3.getFields();
         for (Field field : fields) {
             System.out.println(field.getName());
         }
-        System.out.println("获取所有修饰参数修饰的属性=====");
+        System.out.println("获取所有修饰参数修饰的属性:");
         Field[] fie=t3.getDeclaredFields();
         for (Field field : fie) {
             System.out.println(field.getName());
@@ -91,7 +94,7 @@ public class TestA {
         com.demo.reflect.Demo demo= (com.demo.reflect.Demo) t3.newInstance();
         Field field=t3.getField("name");
         field.set(demo,"jim");
-        System.out.println("======通过反射设置name值===================="+demo.getName());
+        System.out.println("======通过反射设置name值========"+demo.getName());
 
     }
     @Test
@@ -105,7 +108,8 @@ public class TestA {
         System.out.println("获取所有控制符修饰的构造=======");
         Constructor[] constructors1=t3.getDeclaredConstructors();
         for (Constructor constructor : constructors1) {
-            System.out.println(constructor);
+                System.out.println(constructor);
+
         }
     }
 }

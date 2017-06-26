@@ -62,7 +62,7 @@ public class StringTokenizerTest {
 	
 	public static void test2(){
 		Map<String,Object> map=new HashMap<>();
-		StringTokenizer st=new StringTokenizer("channel_id=1000001&order_no_channel=2017050278965&pay_price=900&pay_type=0&product_name=test&sign=8165bc29f855e174f70a9fbd74887044","&");
+		StringTokenizer st=new StringTokenizer("channel_id=1000001&order_no_channel=2017050278965&pay_price=900&pay_type=0&product_name=testmyself&sign=8165bc29f855e174f70a9fbd74887044","&");
 		while(st.hasMoreTokens()){
 			StringTokenizer tt=new StringTokenizer(st.nextToken(),"=");
 			int i=0;
