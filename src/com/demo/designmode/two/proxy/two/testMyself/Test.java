@@ -23,7 +23,7 @@ public class Test {
          * 就可以知道委托的是哪个InvocationHandler 了，进程就会自动执行该 InvocationHandler 的 invoke方法
          */
 
-//      A  a= (A) Proxy.newProxyInstance(t.getClassLoader(),t.getInterfaces(),is);
+        A  xx= (A) Proxy.newProxyInstance(t.getClassLoader(),t.getInterfaces(),is);
         A  a= (A) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]{A.class},new C(b));
         a.test("hehe");
         a.test2();

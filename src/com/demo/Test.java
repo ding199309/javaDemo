@@ -19,9 +19,16 @@ public class Test {
         System.out.println(new BigDecimal(0.355d));
         System.out.println(new BigDecimal("0.355").setScale(2,BigDecimal.ROUND_HALF_EVEN));
         System.out.println(new BigDecimal("0.356").setScale(2,BigDecimal.ROUND_HALF_EVEN));
-        System.out.println(new Random(1000).nextInt());
-        System.out.println(new Random(1000).nextInt());
+//        System.out.println(new Random(1000).nextInt());
+//        System.out.println(new Random(1000).nextInt());
+        System.out.println(new Random().nextInt(1000000));
     }
+
+    @org.junit.Test
+    public void hehe() throws InterruptedException {
+            System.out.println(new Random().nextInt(1000));
+    }
+
     @org.junit.Test
     public void test2(){
         List<String> a = new ArrayList<>();
@@ -52,6 +59,7 @@ public class Test {
             list.add(t);
         }
         Collections.sort(list,c);
+
         for (Model threadDemo : list) {
             System.out.println(threadDemo.getAge());
         }

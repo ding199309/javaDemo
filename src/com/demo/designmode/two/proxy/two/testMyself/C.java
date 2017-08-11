@@ -25,7 +25,7 @@ public class C  implements  InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-      //  method.invoke(obj,args);
+       // method.invoke(obj,args);
 
         Method sourceMethod = obj.getClass().getDeclaredMethod(method.getName(), method.getParameterTypes());
         sourceMethod.setAccessible(true);

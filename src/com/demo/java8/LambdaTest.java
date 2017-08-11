@@ -9,8 +9,6 @@ package com.demo.java8;
  */
 public class LambdaTest {
 
-
-
     public static void main(String[] args) {
         //lambda  表达式
         new Thread(()->{
