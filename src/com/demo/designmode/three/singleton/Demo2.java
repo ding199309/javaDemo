@@ -1,14 +1,13 @@
 package com.demo.designmode.three.singleton;
 
 /**
- * @author dfz
+ * @author dfz20170814
  * @version 1.0
  * @E-mail: dfz@jkinvest.cn
  * @date 创建时间： 17:30  2017/6/19
  * @return
  */
 public class Demo2 {
-
 
 
     private  Demo2(){}
