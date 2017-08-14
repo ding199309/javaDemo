@@ -10,9 +10,11 @@ package com.demo.designmode.three.singleton;
 public class Demo2 {
 
 
+
     private  Demo2(){}
 
     public static  Demo2 getInstance(){
+
         return Demo2Instance.demo2;
     }
 
