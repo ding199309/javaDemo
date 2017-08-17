@@ -7,7 +7,7 @@ package com.demo.designmode.seven.adapter.test;
  * @date 创建时间： 13:55  2017/8/14
  * @return
  */
-public class B extends  A {
+public class B extends A{
 
     private A a;
 

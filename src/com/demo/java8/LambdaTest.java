@@ -10,9 +10,5 @@ package com.demo.java8;
 public class LambdaTest {
 
     public static void main(String[] args) {
-        //lambda  表达式
-        new Thread(()->{
-            System.out.println("111111111");
-        }).start();
     }
 }

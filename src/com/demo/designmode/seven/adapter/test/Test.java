@@ -17,7 +17,6 @@ public class Test {
 
         c.depart(a);
         d.depart(c);
-
         d.show();
     }
 }
