@@ -1,5 +1,7 @@
 package com.demo.stringtokenizer;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -17,7 +19,7 @@ import java.util.StringTokenizer;
 //StringTokenizer 是出于兼容性的原因而被保留的遗留类
 public class StringTokenizerTest {
 	public static void main(String[] args) {
-		test1();
+		test2();
 //		test1();
 	}	
 //	为指定字符串构造一个 string tokenizer。  delim 参数中的所有字符都是分隔标记的分隔符。	
@@ -50,8 +52,7 @@ public class StringTokenizerTest {
 //	计算在生成异常之前可以调用此 tokenizer 的 nextToken 方法的次数。当前位置没有提前。	
 //	public int countTokens()	
 //	返回：使用当前分隔符集的字符串中剩余的标记数。	
-	
-	
+
 	public static void test1(){
 		StringTokenizer st=new StringTokenizer("this &is &a te&st","&");
 		while(st.hasMoreTokens()){

@@ -40,5 +40,9 @@ public class C  implements  InvocationHandler {
         A a= (A) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]{A.class},new C(new B()));
         a.test("aaa");
         a.test2();
+
+        A x= (A) Proxy.newProxyInstance(C.class.getClassLoader(),new Class[]{A.class},new C(new B()));
+        x.test("aaaaaa");
+        x.test2();
     }
 }

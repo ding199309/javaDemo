@@ -21,22 +21,19 @@ public class RecursionTest {
             //取得每一个字符
             List<Integer> list=new ArrayList<Integer>();
             list.add(i);
-            System.out.println("i================"+i);
+//            System.out.println("i================"+i);
             play(list);
         }
 	}	
     //使用递归，每次加上列表中不存在的一个字符
     private static void play(List<Integer> list){
-    	//if(list.size()==chars.length){		
+    	if(list.size()==chars.length){
     		print(list);
-    //	}
+    	}
         for(int i=0;i<chars.length;i++){
             if(!list.contains(i)){
                 List<Integer> temp=new ArrayList<Integer>(list);
                 temp.add(i);
-                for(Integer t:temp){
-                	System.out.print("===t="+t);
-                }    
                 System.out.println();
                 play(temp);
             }
@@ -45,8 +42,8 @@ public class RecursionTest {
     //打印列表内容
     private static void print(List<Integer> list){
         for(Integer i:list){
-  //          System.out.print(chars[i]+"");
-   //     System.out.println();
+            System.out.print(chars[i]+"");
+//        System.out.println();
         }
     }
 	

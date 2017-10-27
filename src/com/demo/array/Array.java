@@ -3,6 +3,7 @@ package com.demo.array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Array {
 
@@ -11,7 +12,7 @@ public class Array {
 		int[] b={4,1,6};
 		a=Arrays.copyOf(a, a.length+b.length);
 		System.arraycopy(b, 0, a, a.length-b.length, b.length);
-		System.out.println(Arrays.toString(a));		
+		System.out.println(Arrays.toString(a));
 		for(int i=0;i<a.length-1;i++){
 			for (int j =0; j < a.length-i-1; j++) {
 				if(a[j]>a[j+1]){
@@ -21,6 +22,7 @@ public class Array {
 				}
 			}
 		}
+		// Arrays.sort(a);
 		System.out.println(Arrays.toString(a));	
 		
 		List<Integer> list=new ArrayList<Integer>();

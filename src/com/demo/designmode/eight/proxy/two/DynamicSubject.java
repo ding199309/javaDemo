@@ -25,6 +25,11 @@ public class DynamicSubject implements InvocationHandler{
 
         System.out.println("----before-----");
         method.invoke(sub,args);
+
+//        Method sourceMethod = sub.getClass().getDeclaredMethod(method.getName(), method.getParameterTypes());
+//        sourceMethod.setAccessible(true);
+//        Object result = sourceMethod.invoke(sub, args);
+
         System.out.println("----after-----");
         return null;
     }

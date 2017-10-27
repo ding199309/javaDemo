@@ -14,7 +14,6 @@ public class Test {
 
     public static void main(String[] args) {
         B b=new B();
-        Class t=b.getClass();
         InvocationHandler  is=new C(b);
 
         /* 第一个参数指定哪个 ClassLoader对象来加载我们的代理对象
@@ -23,8 +22,12 @@ public class Test {
          * 就可以知道委托的是哪个InvocationHandler 了，进程就会自动执行该 InvocationHandler 的 invoke方法
          */
 
-        A  xx= (A) Proxy.newProxyInstance(t.getClassLoader(),t.getInterfaces(),is);
+        A  xx= (A) Proxy.newProxyInstance(b.getClass().getClassLoader(),b.getClass().getInterfaces(),is);
+
+
         A  a= (A) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]{A.class},new C(b));
+
+
         a.test("hehe");
         a.test2();
     }

@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
  * @date 创建时间： 17:05  2017/6/21
  * @return
  */
-public class Test {
+public class JdkTest {
 
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         RealSubject rs=new RealSubject(); //在这里指定被代理类
