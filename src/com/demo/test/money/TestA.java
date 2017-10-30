@@ -37,6 +37,11 @@ public class TestA {
      */
     public   static   final   BigDecimal  MONTH_RATE= BigDecimal.valueOf(0.005833);
 
+
+
+
+
+
     public  static void  test(BigDecimal sum,  int  month){
         if(month==0){
             return;
