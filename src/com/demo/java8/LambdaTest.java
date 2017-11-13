@@ -19,7 +19,6 @@ public class LambdaTest {
                 System.out.println("hello world 2");
             }
         };
-
         process(r1);
         process(r2);
         process(() -> System.out.println("hello world 3"));
