@@ -1,20 +1,24 @@
 package com.demo.concurrent;
 
-import sun.java2d.SurfaceDataProxy;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author dfz
+ * E-mail:  dfz@jkinvest.cn
+ * @version 1.0
+ * @date 创建时间：2017/11/13 10:33
+ * @parameter
+ * @return
+ */
 public class MyContainer<T> {
 
-    final private LinkedList<T> lists=new LinkedList<>();
-    final private int MAX=10;
+    final LinkedList<T> lists=new LinkedList<T>();
+    final int  MAX=10;
     private int count=0;
 
-    public  synchronized  void put(T t){
-        while(lists.size()==MAX){
+    public  synchronized  void  put(T t){
+        while (lists.size()==MAX){
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -25,10 +29,9 @@ public class MyContainer<T> {
         count++;
         this.notifyAll();
     }
-
     public synchronized T get(){
         T t=null;
-        while (lists.size()==0){
+        while(lists.size()==0){
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -42,12 +45,12 @@ public class MyContainer<T> {
     }
 
     public static void main(String[] args) {
-        MyContainer<String> c=new MyContainer<>();
-        //启动消费者现场
-        for (int i = 0; i <10 ; i++) {
+        MyContainer<String> myContainer=new MyContainer<>();
+
+        for (int i = 0; i < 10; i++) {
             new Thread(()->{
                 for (int j = 0; j <5 ; j++) {
-                    System.out.println(Thread.currentThread().getName()+"====="+c.get());
+                    System.out.println(Thread.currentThread().getName()+"=="+myContainer.get());
                 }
             },"c"+i).start();
         }
@@ -58,13 +61,16 @@ public class MyContainer<T> {
             e.printStackTrace();
         }
 
-        //启动生产者线程
         for (int i = 0; i <2 ; i++) {
             new Thread(()->{
                 for (int j = 0; j <25 ; j++) {
-                    c.put(Thread.currentThread().getName()+"=="+j);
+                    myContainer.put(String.valueOf(j));
                 }
             },"p"+i).start();
         }
+
+
     }
+
+
 }

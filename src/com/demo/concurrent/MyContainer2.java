@@ -6,58 +6,72 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author dfz
+ * E-mail:  dfz@jkinvest.cn
+ * @version 1.0
+ * @date 创建时间：2017/11/13 11:34
+ * @parameter
+ * @return
+ */
 public class MyContainer2<T> {
 
-    final private LinkedList<T> lists=new LinkedList<>();
-    final private int MAX=10;
+    final LinkedList<T> lists=new LinkedList<T>();
+    final int  MAX=10;
     private int count=0;
 
     private Lock lock=new ReentrantLock();
-    private Condition producer=lock.newCondition();
-    private Condition consumer=lock.newCondition();
+    private Condition producter=lock.newCondition();
+    private Condition customer=lock.newCondition();
 
-
-
-    public   void put(T t){
+    public  void put(T t){
         try {
             lock.lock();
             while(lists.size()==MAX){
-                producer.await();
+                producter.await();
             }
             lists.add(t);
-            ++count;
-            consumer.signalAll();
+            count++;
+            customer.signalAll();
+
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
             lock.unlock();
         }
+
+
     }
 
-    public  T get(){
+    public T get(){
         T t=null;
+
         try {
             lock.lock();
             while(lists.size()==0){
-                consumer.await();
+                customer.await();
             }
             t=lists.removeFirst();
             count--;
-            producer.signalAll();
+            producter.signalAll();
         } catch (Exception e) {
+            e.printStackTrace();
         }finally {
             lock.unlock();
         }
-        return  t;
+
+
+        return t;
     }
 
+
     public static void main(String[] args) {
-        MyContainer2<String> c=new MyContainer2<>();
-        //启动消费者现场
-        for (int i = 0; i <10 ; i++) {
+        MyContainer2<String> myContainer2=new MyContainer2<>();
+
+        for (int i = 0; i < 10; i++) {
             new Thread(()->{
                 for (int j = 0; j <5 ; j++) {
-                    System.out.println(Thread.currentThread().getName()+"====="+c.get());
+                    System.out.println(Thread.currentThread().getName()+"=="+myContainer2.get());
                 }
             },"c"+i).start();
         }
@@ -68,14 +82,12 @@ public class MyContainer2<T> {
             e.printStackTrace();
         }
 
-        //启动生产者线程
         for (int i = 0; i <2 ; i++) {
             new Thread(()->{
                 for (int j = 0; j <25 ; j++) {
-                    c.put(Thread.currentThread().getName()+"=="+j);
+                    myContainer2.put(Thread.currentThread().getName()+""+String.valueOf(j));
                 }
             },"p"+i).start();
         }
     }
 }
-

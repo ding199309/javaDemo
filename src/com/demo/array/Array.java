@@ -32,7 +32,7 @@ public class Array {
 		for (int i = 0; i < list.size(); i++) {
 			boolean flag=false;
 			for (int j = i+1; j < list.size()-i; j++) {
-				if(list.get(i)==list.get(j)){
+				if(list.get(i).equals(list.get(j))){
 					flag=true;
 					break;
 				}
