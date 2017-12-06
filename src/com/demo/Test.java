@@ -42,6 +42,9 @@ public class Test {
         }
     }
 
+    public void  Test(){
+        System.out.println(1);
+    }
 
     public void hehe(){
         String name="6";
@@ -61,7 +64,8 @@ public class Test {
 //        test(PAHT);
 //        System.out.println(SUM.get());
 
-        Test test=new Test();
-        test.hehe();
+//        Test test=new Test();
+//        test.hehe();
+        new Test().Test();
     }
 }
