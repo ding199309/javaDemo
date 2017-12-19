@@ -1,9 +1,7 @@
 package com.demo.conn.c007;
 
 /**
- * 〈一句话功能简述〉
- * 〈功能详细描述〉
- *
+ * 〈同步和非同步方法是否可以同时调用？  可以。          同步和另一个同步方法是不能同时调用的
  * @author dfz
  * @email dfz@jkinvest.cn
  * @create 2017-12-06 15:08
