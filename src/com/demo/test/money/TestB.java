@@ -63,7 +63,10 @@ public class TestB {
     }
 
     public static void main(String[] args) {
-        test(TOTALMONEY,YEAR*12,MONTH_RATE);
+//        test(TOTALMONEY,YEAR*12,MONTH_RATE);
+
+
+        System.out.println("1_2".split("_")[1]);
     }
 
 }
