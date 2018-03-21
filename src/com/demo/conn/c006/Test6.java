@@ -9,7 +9,6 @@ package com.demo.conn.c006;
  * @create 2017-12-06 14:57
  * @see [相关类/方法]（可选）
  * @since 1.0
- * @deprecated （可选）
  */
 public class Test6  implements  Runnable{
 
