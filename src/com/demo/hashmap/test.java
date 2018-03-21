@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class test {
 	public static void main(String[] args) {
-	//	Map<String,String> map=new HashMap<String,String>();
+//		Map<String,String> map=new HashMap<String,String>();
 		
 		byte[] key="1".getBytes();
 		MyMap<byte[],String>  map=new MyHashMap<byte[],String>();
