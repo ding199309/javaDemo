@@ -1,8 +1,6 @@
 package com.demo.arithmetic.one;
 
 
-import com.demo.designmode.one.abstractfactory.Main;
-
 import java.util.Arrays;
 
 /**   选择排序，插入排序， 插入排序优化，   冒泡排序
