@@ -30,9 +30,24 @@ public class SelectAndInsert {
         System.out.println(Arrays.toString(arr));
     }
 
+    static  void  insert(){
+        for(int i=1;i<arr.length;i++){
+            for(int j=i;j>0;j--){
+                    if(arr[j]<arr[j-1]){
+                            int x=arr[j];
+                            arr[j]=arr[j-1];
+                            arr[j-1]=x;
+                    }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
     public static void main(String[] args) {
 
-        select();//选择排序
+//        select();//选择排序
+        insert();
     }
+
 
 }
