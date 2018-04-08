@@ -30,9 +30,58 @@ public class SelectAndInsert {
         System.out.println(Arrays.toString(arr));
     }
 
+    static  void  insertOne(){
+        for(int i=1;i<arr.length;i++){
+            for(int j=i;j>0&&arr[j]<arr[j-1];j--){
+                    int x=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=x;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static  void  insertTwo(){
+
+
+        for(int i=1;i<arr.length;i++){
+            int e=arr[i];
+            int j;
+            for(j=i;j>0&&arr[j-1]>e;j--){
+                arr[j]=arr[j-1];
+            }
+            arr[j]=e;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+   static void test4(){
+
+       for (int i = 1; i <arr.length ; i++) {
+           int x=arr[i];
+           int j;
+           for(j=i;j>0&&arr[j-1]>x;j--){
+               arr[j]=arr[j-1];
+           }
+           System.out.println(j);
+           arr[j]=x;
+       }
+
+       System.out.println(Arrays.toString(arr));
+   }
+
+
+
+
     public static void main(String[] args) {
 
-        select();//选择排序
+//        select();//选择排序
+
+//        insertOne();//插入排序
+
+//          insertTwo();
+        test4();
     }
 
 }
