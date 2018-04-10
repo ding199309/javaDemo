@@ -1,6 +1,8 @@
 package com.demo.arithmetic.one;
 
 
+import com.demo.array.Array;
+
 import java.util.Arrays;
 
 /**   选择排序，插入排序， 插入排序优化，   冒泡排序
@@ -15,6 +17,7 @@ public class SelectAndInsert {
     static int[] arr={2,4,5,6,1,3,8,9,7,0};
 
     static void select(){
+
         for(int i=0;i<arr.length;i++){
             int index=i;
             for(int j=i;j<arr.length;j++){
@@ -30,58 +33,40 @@ public class SelectAndInsert {
         System.out.println(Arrays.toString(arr));
     }
 
-    static  void  insertOne(){
+    static  void  insert(){
         for(int i=1;i<arr.length;i++){
-            for(int j=i;j>0&&arr[j]<arr[j-1];j--){
-                    int x=arr[j];
-                    arr[j]=arr[j-1];
-                    arr[j-1]=x;
+            for(int j=i;j>0;j--){
+                    if(arr[j]<arr[j-1]){
+                            int x=arr[j];
+                            arr[j]=arr[j-1];
+                            arr[j-1]=x;
+                    }
             }
         }
         System.out.println(Arrays.toString(arr));
     }
 
     static  void  insertTwo(){
-
-
         for(int i=1;i<arr.length;i++){
-            int e=arr[i];
+            int t=arr[i];
             int j;
-            for(j=i;j>0&&arr[j-1]>e;j--){
+            for(j=i;j>0&&arr[j-1]>t;j--){
                 arr[j]=arr[j-1];
             }
-            arr[j]=e;
+
+            arr[j]=t;
         }
+
         System.out.println(Arrays.toString(arr));
     }
-
-
-   static void test4(){
-
-       for (int i = 1; i <arr.length ; i++) {
-           int x=arr[i];
-           int j;
-           for(j=i;j>0&&arr[j-1]>x;j--){
-               arr[j]=arr[j-1];
-           }
-           System.out.println(j);
-           arr[j]=x;
-       }
-
-       System.out.println(Arrays.toString(arr));
-   }
-
 
 
 
     public static void main(String[] args) {
 
 //        select();//选择排序
-
-//        insertOne();//插入排序
-
-//          insertTwo();
-        test4();
+        insert();
     }
+
 
 }
